@@ -3,6 +3,7 @@
 
 // Standard library includes
 #include <string>
+#include <map>
 
 // Our project header
 #include "CipherMode.hpp"
@@ -27,7 +28,7 @@ class PlayfairCipher{
   explicit PlayfairCipher(const std::string& key);
 
   /**
-   * Set the value of _key with the given key
+   * Set the value of _key using the given key
    *
    * \param key the key to set the value of _key to
    */
@@ -43,8 +44,13 @@ class PlayfairCipher{
   std::string applyCipher(const std::string& inputText, const CipherMode cipherMode) const;
   
   private:
+  /// The cipher key
   std::string key_;
-
+  /// Map of character to the coordinates stored as a zero indexed (row,col) pair
+  std::map<char, std::pair<size_t,size_t> > char2coords_;
+  /// Map of the coordinates stored as a zero indexed (row,col) pair to the character
+  std::map<std::pair<size_t,size_t>, char > coords2char_;
+  
 };
   
 #endif 
