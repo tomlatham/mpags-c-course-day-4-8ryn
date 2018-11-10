@@ -69,6 +69,9 @@ Available options:
   -o FILE          Write processed text to FILE
                    Stdout will be used if not supplied
 
+  -c CIPHER        Specify the cipher to be used to perform the encryption/decryption
+                   CIPHER can either be caesar or playfair - caesar is the default
+
   -k KEY           Specify the cipher KEY
                    A null key, i.e. no encryption, is used if not supplied
 
@@ -89,7 +92,7 @@ classical ciphers, it is transliterated using the following rules:
 - Digits are translated to their English equivalent words (e.g. '0' -> "ZERO")
 - All other characters (punctuation) are discarded
 
-At present only the Caesar Cipher is supported.
+At present the Caesar Cipher and Playfair Cipher are supported.
 
 # Source Code Layout
 Under this directory, the code and associated files are organised as
@@ -105,6 +108,10 @@ MPAGS-Code
 │   ├── CaesarCipher.cpp
 │   ├── CaesarCipher.hpp
 │   ├── CipherMode.hpp
+│   ├   CipherType.hpp
+│   ├   CMakeLists.txt
+│   ├   PlayfairCipher.hpp
+│   ├   PlayfairCipher.cpp
 │   ├── ProcessCommandLine.cpp
 │   ├── ProcessCommandLine.hpp
 │   ├── TransformChar.cpp
