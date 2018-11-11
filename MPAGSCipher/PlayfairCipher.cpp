@@ -71,7 +71,7 @@ std::string PlayfairCipher::applyCipher( \
   /* If repeated chars in a digraph add an X or Q if XX and add a trailing Z if
      size of input is odd. Code is slightly complicated due to only needing to 
      add an X for repeating chars in the same digraph rather than all repeated chars*/
-  for(int i{0}; i<input.length(); ++i){
+  for(size_t i{0}; i<input.length(); ++i){
     /* If this if statement is true then the final digraph has been reached
        and it only has one letter */
     if(i == (input.length()-1)){
@@ -96,7 +96,7 @@ std::string PlayfairCipher::applyCipher( \
 
   std::string output{""};
   // Loop over the input in Digraphs
-  for(int i{0}; i<input2.length(); i+=2){
+  for(size_t i{0}; i<input2.length(); i+=2){
   
   // - Find the coords in the grid for each digraph
     auto pos1Iter {char2coords_.find(input2[i])};

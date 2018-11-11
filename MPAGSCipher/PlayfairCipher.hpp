@@ -28,13 +28,6 @@ class PlayfairCipher{
   explicit PlayfairCipher(const std::string& key);
 
   /**
-   * Set the value of _key using the given key
-   *
-   * \param key the key to set the value of _key to
-   */
-  void setKey(const std::string& key);
-
-  /**
    * Apply the cipher to the provided text
    *
    * \param inputText the text to encrypt or decrypt
@@ -50,6 +43,14 @@ class PlayfairCipher{
   std::map<char, std::pair<size_t,size_t> > char2coords_;
   /// Map of the coordinates stored as a zero indexed (row,col) pair to the character
   std::map<std::pair<size_t,size_t>, char > coords2char_;
+
+
+  /**
+   * Set the value of _key using the given key
+   *
+   * \param key the key to set the value of _key to
+   */
+  void setKey(const std::string& key);
   
 };
   
